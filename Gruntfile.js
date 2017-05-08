@@ -38,8 +38,7 @@ module.exports = function (grunt)
             dist: [
                 'css',
                 'replace',
-                'uglify',
-                'devUpdate'
+                'uglify'
             ]
         },
 
@@ -51,20 +50,6 @@ module.exports = function (grunt)
                 src: ['*.css', '!*.min.css'],
                 dest: '<%= paths.dest.css %>',
                 ext: '.min.css'
-            }
-        },
-
-        // Report on any available updates for dependencies.
-        devUpdate: {
-            main: {
-                options: {
-                    updateType: 'report',
-                    reportUpdated: false, // Don't report up-to-date packages.
-                    packages: {
-                        dependencies: true,
-                        devDependencies: true
-                    }
-                }
             }
         },
 
@@ -106,12 +91,7 @@ module.exports = function (grunt)
         postcss: {
             options: {
                 processors: [
-                    require('autoprefixer')({
-                        browsers: [
-                            '> 1%',
-                            'last 2 versions'
-                        ]
-                    })
+                    require('autoprefixer')
                 ]
             },
             files: {
