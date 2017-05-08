@@ -32,8 +32,10 @@
     "material-design-lite": "~1"
   },
   "browserslist": [
-    "last 3 versions",
-    "not ie <= 11"
+    "last 2 versions",
+    "not ie < 11",
+    "not ExplorerMobile < 11",
+    "> 2%"
   ],
   "scripts": {
     "test": "grunt travis --verbose"
