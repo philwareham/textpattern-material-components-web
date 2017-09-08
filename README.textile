@@ -1,7 +1,0 @@
-h1. Textpattern Material Design Lite Templates
-
-*Currently under development.*
-
-h2. License
-
-Licensed under "Apache-2 license":https://github.com/google/material-design-lite/blob/master/LICENSE except Textpattern templates, which are licensed under GPLv2 license.
