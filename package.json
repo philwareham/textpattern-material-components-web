@@ -1,5 +1,6 @@
 {
   "name": "textpattern-material-design-lite",
+  "description": "Textpattern templates based on Google’s Material Design Lite framework.",
   "version": "0.0.0",
   "repository": {
     "type": "git",
@@ -19,7 +20,6 @@
     "grunt-contrib-uglify": "3.1.0",
     "grunt-contrib-watch": "1.0.0",
     "grunt-postcss": "0.9.0",
-    "grunt-replace": "1.0.1",
     "grunt-sass": "2.0.0",
     "grunt-sass-lint": "0.2.3",
     "load-grunt-tasks": "~3.5",

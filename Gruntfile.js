@@ -22,11 +22,6 @@ module.exports = function (grunt)
             }
         },
 
-        // Set up timestamp.
-        opt : {
-            timestamp: '<%= new Date().getTime() %>'
-        },
-
         // Clean distribution and temporary directories to start afresh.
         clean: [
             '<%= paths.dest.css %>',
@@ -37,23 +32,12 @@ module.exports = function (grunt)
         concurrent: {
             dist: [
                 'css',
-                'replace',
+                'jshint',
                 'uglify'
             ]
         },
 
-        // Minified versions of CSS files.
-        cssmin: {
-            files: {
-                expand: true,
-                cwd: '<%= paths.dest.css %>',
-                src: ['*.css', '!*.min.css'],
-                dest: '<%= paths.dest.css %>',
-                ext: '.min.css'
-            }
-        },
-
-        // Check code quality of Gruntfile.js using JSHint.
+        // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
         jshint: {
             options: {
                 bitwise: true,
@@ -91,30 +75,15 @@ module.exports = function (grunt)
         postcss: {
             options: {
                 processors: [
-                    require('autoprefixer')
+                    require('autoprefixer'),
+                    require('cssnano')
                 ]
             },
             files: {
                 expand: true,
                 cwd: '<%= paths.dest.css %>',
-                src: ['*.css', '!*.min.css'],
+                src: ['*.css'],
                 dest: '<%= paths.dest.css %>'
-            }
-        },
-
-        // Generate filename timestamps within template/mockup files.
-        replace: {
-            options: {
-                patterns: [{
-                    match: 'timestamp',
-                    replacement: '<%= opt.timestamp %>'
-                }]
-            },
-            files: {
-                expand: true,
-                cwd: '<%= paths.src.templates %>',
-                src: '**',
-                dest: '<%= paths.dest.templates %>'
             }
         },
 
@@ -123,11 +92,11 @@ module.exports = function (grunt)
             options: {
                 includePaths: ['node_modules/material-design-lite/src'],
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                sourceMap: true
+                sourceMap: false
             },
             dist: {
                 files: {
-                    '<%= paths.dest.css %>app.css': '<%= paths.src.sass %>app.scss'
+                    '<%= paths.dest.css %>app.min.css': '<%= paths.src.sass %>app.scss'
                 }
             }
         },
@@ -137,19 +106,10 @@ module.exports = function (grunt)
             options: {
                 configFile: '.sass-lint.yml'
             },
-            target: ['<%= paths.src.sass %>**/*.scss']
-        },
-
-        // Run Textpattern setup script.
-        shell: {
-            setup: {
-                command: [
-                    'php setup/setup.php'
-                ].join('&&'),
-                options: {
-                    stdout: true
-                }
-            }
+            target: [
+                '<%= paths.src.sass %>**/*.scss',
+                '!<%= paths.src.sass %>_settings.scss'
+            ]
         },
 
         // Uglify and copy JavaScript files from `node_modules` and `js` to `public/assets/js/`.
@@ -177,10 +137,6 @@ module.exports = function (grunt)
             js: {
                 files: '<%= paths.src.js %>**',
                 tasks: ['jshint', 'uglify']
-            },
-            templates: {
-                files: '<%= paths.src.templates %>**',
-                tasks: 'replace'
             }
         }
 
@@ -188,8 +144,7 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'cssmin']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('travis', ['jshint', 'build']);
 };
