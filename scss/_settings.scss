@@ -5,288 +5,354 @@
 //
 //   1. Typography
 //   2. Colors
-//   3. Spinner
-//   4. Icon toggles
-//   5. Footer
-//   6. Card
-//   7. Button
-//   8. Animation
-//   9. Progress
-//  10. Badge
-//  11. Grid
-//  12. Tooltip
+//   3. Textfield
+//   4. Switch
+//   5. Spinner
+//   6. Radio
+//   7. Menu
+//   8. List
+//   9. Layout
+//  10. Icon toggles
+//  11. Footer
+//  12. Checkbox
+//  13. Card
+//  14. Button
+//  15. Animation
+//  16. Progress
+//  17. Badge
+//  18. Shadows
+//  19. Grid
+//  20. Data table
+//  21. Dialog
+//  22. Snackbar
+//  23. Tooltip
+//  24. Chip
 
 
 // Typography
 // -----
 
-//$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-//$performance_font: 'Helvetica', 'Arial', sans-serif;
+$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$performance_font: 'Helvetica', 'Arial', sans-serif;
+
 
 // Colors
 // -----
+// See https://material.io/guidelines/style/color.html
 
-//$image_path: '/images';
-//$color-primary: $palette-indigo-500;
-//$color-primary-dark: $palette-indigo-700;
-//$color-accent: $palette-pink-A200;
-//$color-primary-contrast: $color-dark-contrast;
-//$color-accent-contrast: $color-dark-contrast;
+// Define whether individual color palette items should have classes created.
+// Setting this to true will remove individual color classes for each color in the palettes.
+// To improve overall performance (assuming they aren't used) by:
+// * Saving server bandwidth sending the extra classes
+// * Save client computation against the classes
+// it is RECOMMENDED you set this to true.
+$trim-color-classes: false;
 
-//$text-color-primary: unquote("rgba(#{$color-black}, 0.87)");
-//$text-link-color: unquote("rgb(#{$color-accent})");
+// Use color primarily for emphasis. Choose colors that fit with
+// your brand and provide good contrast between visual components.
+$color-primary: $palette-indigo-500;
+$color-primary-dark: $palette-indigo-700;
+$color-accent: $palette-pink-A200;
 
-//$target-elements-directly: true;
+// Our primary is dark, so use $color-dark-contrast for overlaid text.
+$color-primary-contrast: $color-dark-contrast;
 
-//$button-primary-color: unquote("rgba(#{$palette-grey-500}, 0.20)");
-//$button-secondary-color: unquote("rgb(#{$color-black})");
-//$button-hover-color: $button-primary-color;
-//$button-active-color: unquote("rgba(#{$palette-grey-500}, 0.40)");
-//$button-focus-color: unquote("rgba(#{$color-black}, 0.12)");
+// Our accent is dark, so use $color-dark-contrast for overlaid text.
+$color-accent-contrast: $color-dark-contrast;
 
-//$button-primary-color-alt: unquote("rgb(#{$color-primary})");
-//$button-secondary-color-alt: unquote("rgb(#{$color-primary-contrast})");
-//$button-hover-color-alt: unquote("rgb(#{$color-primary})");
-//$button-active-color-alt: unquote("rgb(#{$color-primary})");
-//$button-focus-color-alt: $button-focus-color;
 
-//$button-ripple-color-alt: unquote("rgb(#{$color-primary-contrast})");
+// Textfield
+// -----
 
-//$button-primary-color-disabled: unquote("rgba(#{$color-black}, 0.12)");
-//$button-secondary-color-disabled: unquote("rgba(#{$color-black}, 0.26)");
+$input-text-font-size: 16px;
+$input-text-padding: 4px;
+$input-text-vertical-spacing: 20px;
 
-//$button-fab-color-alt: unquote("rgb(#{$color-accent})");
-//$button-fab-hover-color-alt: unquote("rgb(#{$color-accent})");
-//$button-fab-active-color-alt: unquote("rgb(#{$color-accent})");
-//$button-fab-text-color-alt: unquote("rgb(#{$color-accent-contrast})");
-//$button-fab-ripple-color-alt: unquote("rgb(#{$color-accent-contrast})");
+$input-text-button-size: 32px;
+$input-text-floating-label-fontsize: 12px;
+$input-text-expandable-icon-top: 16px;
 
-//$button-icon-color: unquote("rgb(#{$palette-grey-700})");
-//$button-icon-focus-color: $button-focus-color;
 
-//$icon-toggle-color: unquote("rgb(#{$palette-grey-700})");
-//$icon-toggle-focus-color: $button-focus-color;
-//$icon-toggle-checked-color: unquote("rgb(#{$color-primary})");
-//$icon-toggle-checked-focus-color: unquote("rgba(#{$color-primary}, 0.26)");
-//$icon-toggle-disabled-color: unquote("rgba(#{$color-black}, 0.26)");
+// Switch
+// -----
 
-//$radio-color: unquote("rgb(#{$color-primary})");
-//$radio-off-color: unquote("rgba(#{$color-black}, 0.54)");
-//$radio-disabled-color: unquote("rgba(#{$color-black}, 0.26)");
+$switch-label-font-size: 16px;
+$switch-label-height: 24px;
+$switch-track-height: 14px;
+$switch-track-length: 36px;
+$switch-thumb-size: 20px;
+$switch-helper-size: 8px;
 
-//$ripple-bg-color: unquote("rgb(#{$color-light-contrast})");
-
-//$layout-nav-color: unquote("rgb(#{$palette-grey-300})");
-
-//$layout-drawer-bg-color: unquote("rgb(#{$palette-grey-50})");
-//$layout-drawer-border-color: unquote("rgb(#{$palette-grey-300})");
-//$layout-text-color: unquote("rgb(#{$palette-grey-800})");
-//$layout-drawer-navigation-color: #757575;
-//$layout-drawer-navigation-link-active-background: unquote("rgb(#{$color-light-contrast})");
-//$layout-drawer-navigation-link-active-color: unquote("rgb(#{$palette-grey-300})");
-
-//$layout-header-bg-color: unquote("rgb(#{$color-primary})");
-//$layout-header-text-color: unquote("rgb(#{$color-primary-contrast})");
-//$layout-header-nav-hover-color: unquote("rgba(#{$palette-grey-700}, 0.6)");
-//$layout-header-tab-text-color: unquote("rgba(#{$color-primary-contrast}, 0.6)");
-
-//$layout-header-tab-highlight: unquote("rgb(#{$color-accent})");
-
-//$tab-highlight-color: unquote("rgb(#{$color-primary})");
-//$tab-text-color: unquote("rgba(#{$color-black}, 0.54)");
-//$tab-active-text-color: unquote("rgba(#{$color-black}, 0.87)");
-//$tab-border-color: unquote("rgb(#{$palette-grey-300})");
-
-//$checkbox-color: unquote("rgb(#{$color-primary})");
-//$checkbox-off-color: unquote("rgba(#{$color-black}, 0.54)");
-//$checkbox-disabled-color: unquote("rgba(#{$color-black}, 0.26)");
-//$checkbox-focus-color: unquote("rgba(#{$color-primary}, 0.26)");
-
-//$switch-color: unquote("rgb(#{$color-primary})");
-//$switch-faded-color: unquote("rgba(#{$color-primary}, 0.26)");
-//$switch-thumb-color: $switch-color;
-//$switch-track-color: unquote("rgba(#{$color-primary}, 0.5)");
-
-//$switch-off-thumb-color: unquote("rgb(#{$palette-grey-50})");
-//$switch-off-track-color: unquote("rgba(#{$color-black}, 0.26)");
-//$switch-disabled-thumb-color: unquote("rgb(#{$palette-grey-400})");
-//$switch-disabled-track-color: unquote("rgba(#{$color-black}, 0.12)");
-
-//$spinner-color-1: unquote("rgb(#{$palette-blue-400})");
-//$spinner-color-2: unquote("rgb(#{$palette-red-500})");
-//$spinner-color-3: unquote("rgb(#{$palette-yellow-600})");
-//$spinner-color-4: unquote("rgb(#{$palette-green-500})");
-
-//$spinner-single-color: unquote("rgb(#{$color-primary})");
-
-//$input-text-background-color: transparent;
-//$input-text-label-color: unquote("rgba(#{$color-black}, 0.26)");
-//$input-text-bottom-border-color: unquote("rgba(#{$color-black}, 0.12)");
-//$input-text-highlight-color: unquote("rgb(#{$color-primary})");
-//$input-text-disabled-color: $input-text-bottom-border-color;
-//$input-text-disabled-text-color: $input-text-label-color;
-//$input-text-error-color: unquote("rgb(222, 50, 38)");
-
-//$card-background-color: unquote("rgb(#{$color-white})");
-//$card-text-color: unquote("rgb(#{$color-black})");
-//$card-image-placeholder-color: unquote("rgb(#{$color-accent})");
-//$card-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)");
-//$card-border-color: rgba(0,0,0,0.1);
-//$card-subtitle-color: unquote("rgba(#{$color-black}, 0.54)");
-
-//$range-bg-color: unquote("rgba(#{$color-black}, 0.26)");
-//$range-color: unquote("rgb(#{$color-primary})");
-//$range-faded-color: unquote("rgba(#{$color-primary}, 0.26)");
-//$range-bg-focus-color: unquote("rgba(#{$color-black}, 0.12)");
-
-//$progress-main-color: unquote("rgb(#{$color-primary})");
-//$progress-secondary-color: unquote("rgba(#{$color-primary-contrast}, 0.7)");
-//$progress-fallback-buffer-color: unquote("rgba(#{$color-primary-contrast}, 0.9)");
-
-//$list-container-item-border-color: unquote("rgb(#{$palette-grey-300})");
-//$list-container-view-background: unquote("rgb(#{$color-white})");
-
-//$default-item-text-color: unquote("rgba(#{$color-black}, 0.87)");
-//$default-item-outline-color: unquote("rgb(#{$palette-grey-400})");
-//$default-item-hover-bg-color: unquote("rgb(#{$palette-grey-200})");
-//$default-item-focus-bg-color: unquote("rgb(#{$palette-grey-200})");
-//$default-item-active-bg-color: unquote("rgb(#{$palette-grey-300})");
-
-//$disabled-item-text-color: unquote("rgb(#{$palette-grey-400})");
-
-//$default-dropdown-bg-color: unquote("rgb(#{$color-white})");
-
-//$tooltip-text-color: unquote("rgb(#{$color-white})");
-//$tooltip-background-color: unquote("rgba(#{$palette-grey-700}, 0.9)");
-
-//$footer-bg-color: unquote("rgb(#{$palette-grey-800})");
-//$footer-color: unquote("rgb(#{$palette-grey-500})");
-//$footer-heading-color: unquote("rgb(#{$palette-grey-300})");
-//$footer-button-fill-color: $footer-color;
-//$footer-underline-color: $footer-color;
 
 // Spinner
 // -----
 
-//$spinner-size: 28px;
-//$spinner-stroke-width: 3px;
+$spinner-size: 28px;
+$spinner-stroke-width: 3px;
+
+
+// Radio
+// -----
+
+$radio-label-font-size: 16px;
+$radio-label-height: 24px;
+$radio-button-size: 16px;
+$radio-padding: 8px;
+$radio-ripple-size: 42px;
+
+
+// Menu
+// -----
+
+$menu-expand-duration: 0.3s;
+$menu-fade-duration: 0.2s;
+
+
+// List
+// -----
+
+$list-border: 8px;
+$list-min-height: 48px;
+$list-min-padding: 16px;
+$list-bottom-padding: 20px;
+$list-avatar-text-left-distance: 72px;
+$list-icon-text-left-distance: 72px;
+
+$list-avatar-size: 40px;
+$list-icon-size: 24px;
+
+$list-two-line-height: 72px;
+$list-three-line-height: 88px;
+
+
+// Layout
+// -----
+
+$layout-drawer-narrow: 240px;
+$layout-drawer-wide: 456px;
+$layout-drawer-width: $layout-drawer-narrow;
+
+$layout-header-icon-size: 32px;
+$layout-screen-size-threshold: 1024px;
+$layout-header-icon-margin: 24px;
+$layout-drawer-button-mobile-size: 32px;
+$layout-drawer-button-desktop-size: 48px;
+
+$layout-header-mobile-row-height: 56px;
+$layout-mobile-header-height: $layout-header-mobile-row-height;
+$layout-header-desktop-row-height: 64px;
+$layout-desktop-header-height: $layout-header-desktop-row-height;
+
+$layout-header-desktop-baseline: 80px;
+$layout-header-mobile-baseline: 72px;
+$layout-header-mobile-indent: 16px;
+$layout-header-desktop-indent: 40px;
+
+$layout-tab-font-size: 14px;
+$layout-tab-bar-height: 48px;
+$layout-tab-mobile-padding: 12px;
+$layout-tab-desktop-padding: 24px;
+$layout-tab-highlight-thickness: 2px;
+
 
 // Icon toggles
 // -----
 
-//$icon-toggle-size: 32px;
-//$icon-toggle-font-size: 24px;
-//$icon-toggle-ripple-size: 36px;
+$icon-toggle-size: 32px;
+$icon-toggle-font-size: 24px;
+$icon-toggle-ripple-size: 36px;
+
 
 // Footer
 // -----
 
-//$footer-min-padding: 16px;
-//$footer-padding-sides: 40px;
-//$footer-heading-font-size: 14px;
-//$footer-heading-line-height: (1.7 * $footer-heading-font-size);
-//$footer-btn-size: 36px;
+/*mega-footer*/
+$footer-min-padding: 16px;
+$footer-padding-sides: 40px;
+$footer-heading-font-size: 14px;
+$footer-heading-line-height: (1.7 * $footer-heading-font-size);
+$footer-btn-size: 36px ;
 
-//$padding: 16px;
-//$footer-heading-font-size: 24px;
-//$footer-heading-line-height: (1.5 * $footer-heading-font-size);
-//$footer-btn-size: 36px;
+/*mini-footer*/
+$padding: 16px;
+$footer-heading-font-size: 24px;
+$footer-heading-line-height: (1.5 * $footer-heading-font-size);
+$footer-btn-size: 36px;
+
+
+// Checkbox
+// -----
+
+$checkbox-label-font-size: 16px;
+$checkbox-label-height: 24px;
+$checkbox-button-size: 16px;
+$checkbox-inner-margin: 2px;
+$checkbox-padding: 8px;
+
 
 // Card
 // -----
 
-//$card-width: 330px;
-//$card-height: 200px;
-//$card-font-size: 16px;
-//$card-title-font-size: 24px;
-//$card-subtitle-font-size: 14px;
-//$card-horizontal-padding: 16px;
-//$card-vertical-padding: 16px;
+/* Card dimensions */
+$card-width: 330px;
+$card-height: 200px;
+$card-font-size: 16px;
+$card-title-font-size: 24px;
+$card-subtitle-font-size: 14px;
+$card-horizontal-padding: 16px;
+$card-vertical-padding: 16px;
 
-//$card-title-perspective-origin-x: 165px;
-//$card-title-perspective-origin-y: 56px;
+$card-title-perspective-origin-x: 165px;
+$card-title-perspective-origin-y: 56px;
 
-//$card-title-transform-origin-x: 165px;
-//$card-title-transform-origin-y: 56px;
+$card-title-transform-origin-x: 165px;
+$card-title-transform-origin-y: 56px;
 
-//$card-title-text-transform-origin-x: 149px;
-//$card-title-text-transform-origin-y: 48px;
+$card-title-text-transform-origin-x: 149px;
+$card-title-text-transform-origin-y: 48px;
 
-//$card-supporting-text-font-size: 13px;
-//$card-supporting-text-line-height: 18px;
+$card-supporting-text-font-size: 1rem;
+$card-supporting-text-line-height: 18px;
 
-//$card-actions-font-size: 16px;
+$card-actions-font-size: 16px;
 
-//$card-title-text-font-weight: 300;
-//$card-z-index: 1;
+$card-title-text-font-weight: 300;
+$card-z-index: 1;
 
-//$card-cover-image-height: 186px;
-//$card-background-image-url: '';
+/* Cover image */
+$card-cover-image-height: 186px;
+$card-background-image-url: '';
 
 
 // Button
 // -----
 
-//$button-min-width: 64px;
-//$button-height: 36px;
-//$button-padding: 16px;
-//$button-margin: 4px;
-//$button-border-radius: 2px;
+$button-min-width: 64px;
+$button-height: 36px;
+$button-padding: 16px;
+$button-margin: 4px;
+$button-border-radius: 2px;
 
-//$button-fab-size: 56px;
-//$button-fab-size-mini: 40px;
-//$button-fab-font-size: 24px;
+$button-fab-size: 56px;
+$button-fab-size-mini: 40px;
+$button-fab-font-size: 24px;
 
-//$button-icon-size: 32px;
-//$button-icon-size-mini: 24px;
+$button-icon-size: 32px;
+$button-icon-size-mini: 24px;
 
 
 // Animation
 // -----
 
-//$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
-//$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
-//$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
 
-//$animation-curve-default: $animation-curve-fast-out-slow-in;
+$animation-curve-default: $animation-curve-fast-out-slow-in;
 
 
 // Progress
 // -----
 
-//$bar-height: 4px;
+$bar-height: 4px;
+
 
 // Badge
 // -----
 
-//$badge-color: unquote("rgb(#{$color-accent-contrast})");
-//$badge-color-inverse: unquote("rgb(#{$color-accent})");
-//$badge-background: unquote("rgb(#{$color-accent})");
-//$badge-background-inverse: unquote("rgb(#{$color-accent-contrast})");
+$badge-font-size: 12px;
+$badge-size: 22px;
+$badge-padding: 2px;
+$badge-overlap: 12px;
+
+
+// Shadows
+// -----
+
+$shadow-key-umbra-opacity: 0.2;
+$shadow-key-penumbra-opacity: 0.14;
+$shadow-ambient-shadow-opacity: 0.12;
+
 
 // Grid
 // -----
 
-//$grid-desktop-columns: 12;
-//$grid-desktop-gutter: 16px;
-//$grid-desktop-margin: 16px;
+$grid-desktop-columns: 12;
+$grid-desktop-gutter: 16px;
+$grid-desktop-margin: 16px;
 
-//$grid-desktop-breakpoint: 840px;
+$grid-desktop-breakpoint: 840px;
 
-//$grid-tablet-columns: 8;
-//$grid-tablet-gutter: $grid-desktop-gutter;
-//$grid-tablet-margin: $grid-desktop-margin;
+$grid-tablet-columns: 8;
+$grid-tablet-gutter: $grid-desktop-gutter;
+$grid-tablet-margin: $grid-desktop-margin;
 
-//$grid-tablet-breakpoint: 480px;
+$grid-tablet-breakpoint: 480px;
 
-//$grid-phone-columns: 4;
-//$grid-phone-gutter: $grid-desktop-gutter;
-//$grid-phone-margin: $grid-desktop-margin;
+$grid-phone-columns: 4;
+$grid-phone-gutter: $grid-desktop-gutter;
+$grid-phone-margin: $grid-desktop-margin;
 
-//$grid-cell-default-columns: $grid-phone-columns;
+$grid-cell-default-columns: $grid-phone-columns;
+$grid-max-columns: $grid-desktop-columns;
+
+
+// Data table
+// -----
+
+$data-table-font-size: 13px;
+$data-table-header-font-size: 12px;
+$data-table-header-sort-icon-size: 16px;
+
+$data-table-header-color: rgba(#000, 0.54);
+$data-table-header-sorted-color: rgba(#000, 0.87);
+$data-table-header-sorted-icon-hover-color: rgba(#000, 0.26);
+$data-table-divider-color: rgba(#000, 0.12);
+
+$data-table-hover-color: #eeeeee;
+$data-table-selection-color: #e0e0e0;
+
+$data-table-dividers: 1px solid $data-table-divider-color;
+
+$data-table-row-height: 48px;
+$data-table-last-row-height: 56px;
+$data-table-header-height: 56px;
+
+$data-table-column-spacing: 36px;
+$data-table-column-padding: $data-table-column-spacing / 2;
+
+$data-table-card-header-height: 64px;
+$data-table-card-title-top: 20px;
+$data-table-card-padding: 24px;
+$data-table-button-padding-right: 16px;
+$data-table-cell-top: $data-table-card-padding / 2;
+
+
+// Dialog
+// -----
+
+$dialog-content-color: $card-supporting-text-text-color;
+
+
+// Snackbar
+// -----
+
+// Hard coded since the color is not present in any palette.
+$snackbar-background-color: #323232;
+$snackbar-tablet-breakpoint: $grid-tablet-breakpoint;
+
 
 // Tooltip
 // -----
 
-//$tooltip-font-size: 10px;
-//$tooltip-font-size-large: 14px;
+$tooltip-font-size: 10px;
+$tooltip-font-size-large: 14px;
+
+
+// Chip
+// -----
+
+$chip-bg-color: rgb(222, 222, 222);
+$chip-bg-active-color: rgb(214, 214, 214);
+$chip-height: 32px;
+$chip-font-size: 13px;
