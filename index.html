@@ -1,11 +1,94 @@
-<html>
- <head>
-   <link rel="stylesheet" href="bundle.css">
- </head>
-<body>
-  <button class="mdc-button">
-    Button
-  </button>
-<script async src="bundle.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Material Components for the Web for Textpattern</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="bundle.css">
+</head>
+<body class="mdc-typography">
+
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+                <span class="mdc-top-app-bar__title">Title</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">file_download</a>
+                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Print this page" alt="Print this page">print</a>
+                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+            </section>
+        </div>
+    </header>
+
+	<main>
+        <h1 class="mdc-typography--headline1">Big header</h1>
+        <button class="mdc-button">Button</button>
+
+<ul class="mdc-list mdc-list--two-line">
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      First-line text
+      <span class="mdc-list-item__secondary-text">
+        Second-line text
+      </span>
+    </span>
+  </li>
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      First-line text
+      <span class="mdc-list-item__secondary-text">
+        Second-line text
+      </span>
+    </span>
+  </li>
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      First-line text
+      <span class="mdc-list-item__secondary-text">
+        Second-line text
+      </span>
+    </span>
+  </li>
+</ul>
+
+<div class="mdc-chip-set">
+  <div class="mdc-chip" tabindex="0">
+    <div class="mdc-chip__text">Chip content</div>
+  </div>
+  <div class="mdc-chip" tabindex="0">
+    <div class="mdc-chip__text">Chip content</div>
+  </div>
+  <div class="mdc-chip" tabindex="0">
+    <div class="mdc-chip__text">Chip content</div>
+  </div>
+</div>
+
+<div class="mdc-card">
+  <div class="mdc-card__media mdc-card__media--square">
+    <div class="mdc-card__media-content">Title</div>
+  </div>
+  <!-- ... content ... -->
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+      <button class="mdc-button mdc-card__action mdc-card__action--button">Action 1</button>
+      <button class="mdc-button mdc-card__action mdc-card__action--button">Action 2</button>
+    </div>
+    <div class="mdc-card__action-icons">
+      <i class="material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="Share">share</i>
+      <i class="material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="More options">more_vert</i>
+    </div>
+  </div>
+</div>
+	</main>
+
+    <footer>
+    	<small>&copy; 2017 Site Name ALL RIGHTS RESERVED</small>
+    </footer>
+
+    <script async src="bundle.js"></script>
 </body>
 </html>
