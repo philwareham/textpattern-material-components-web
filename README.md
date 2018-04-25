@@ -1,11 +1,11 @@
-# Textpattern Material Design Lite Templates
+# Textpattern Material Components for the Web Templates
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/philwareham/textpattern-material-design-lite.svg)](https://greenkeeper.io/)
-[![Build Status](https://img.shields.io/travis/philwareham/textpattern-material-design-lite/master.svg)](https://travis-ci.org/philwareham/textpattern-material-design-lite)
+[![Greenkeeper badge](https://badges.greenkeeper.io/philwareham/textpattern-material-components-web.svg)](https://greenkeeper.io/)
+[![Build Status](https://img.shields.io/travis/philwareham/textpattern-material-components-web/master.svg)](https://travis-ci.org/philwareham/textpattern-material-components-web)
 
-[Demo](http://material-design-lite.philwareham.co.uk/).
+[Demo](http://material-components-web.philwareham.co.uk/).
 
-Textpattern templates for use with [Material Design Lite](https://getmdl.io) v1.
+Textpattern templates for use with [Material Components for the Web](https://material.io/components/web/).
 
 ## Supported web browsers
 
@@ -55,9 +55,9 @@ Where the `@task@` is either `build` or `watch`.
 * The `build` task builds the project.
 * The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
 
-## Updating Material Design Lite
+## Updating Material Components for the Web
 
-If you'd like to upgrade to a newer version of Material Design Lite down the road just run:
+If you'd like to upgrade to a newer version of Material Components for the Web down the road just run:
 
 ```ShellSession
 $ npm update
