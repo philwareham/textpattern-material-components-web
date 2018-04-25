@@ -23,7 +23,7 @@
     "webpack-dev-server": "2.11.2"
   },
   "dependencies": {
-    "@material/button": "^0.35.0"
+    "material-components-web": "0.35.0"
   },
   "browserslist": [
     "> 0.5%",
@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "grunt travis --verbose"
+    "build": "webpack -p --progress"
   },
   "license": "(Apache-2.0 AND GPL-2.0)"
 }
