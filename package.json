@@ -1,41 +1,30 @@
 {
-  "name": "textpattern-material-design-lite",
-  "description": "Textpattern templates based on Google’s Material Design Lite framework.",
+  "name": "textpattern-material-components-web",
+  "description": "Textpattern templates based on Google’s Material Components for the Web framework.",
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/philwareham/textpattern-material-design-lite"
+    "url": "https://github.com/philwareham/textpattern-material-components-web"
   },
   "bugs": {
-    "url": "https://github.com/philwareham/textpattern-material-design-lite/issues"
+    "url": "https://github.com/philwareham/textpattern-material-components-web/issues"
   },
   "devDependencies": {
     "autoprefixer": "8.3.0",
-    "cssnano": "4.0.0-rc.2",
-    "grunt": "~1.0",
-    "grunt-cli": "~1",
-    "grunt-concurrent": "2.3.1",
-    "grunt-contrib-clean": "1.1.0",
-    "grunt-contrib-jshint": "1.1.0",
-    "grunt-contrib-uglify": "3.3.0",
-    "grunt-contrib-watch": "1.0.1",
-    "grunt-postcss": "0.9.0",
-    "grunt-sass": "2.1.0",
-    "grunt-sass-lint": "0.2.4",
-    "load-grunt-tasks": "~3.5",
+    "css-loader": "0.28.11",
+    "extract-loader": "2.0.1",
+    "file-loader": "1.1.11",
     "node-sass": "4.8.3",
-    "sass-lint": "1.12.1"
-  },
-  "dependencies": {
-    "material-design-lite": "~1"
-  },
+    "sass-loader": "7.0.1",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.2"
+  }
   "browserslist": [
-    "last 2 versions",
-    "not ie < 11",
-    "not ExplorerMobile < 11",
-    "> 2%"
+    "> 0.5%",
+    "not ie < 11"
   ],
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "grunt travis --verbose"
   },
   "license": "(Apache-2.0 AND GPL-2.0)"
