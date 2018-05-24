@@ -16,8 +16,8 @@ Textpattern templates for use with [Material Components for the Web](https://mat
 
 Building this repository requires:
 
-* [Node.js](https://nodejs.org/) >=4.0
-* [Grunt](https://gruntjs.com/) >=1.0
+* [Node.js](https://nodejs.org/)
+* [Grunt](https://gruntjs.com/)
 
 ## Setup
 
