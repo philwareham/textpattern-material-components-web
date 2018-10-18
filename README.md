@@ -1,7 +1,7 @@
 # Textpattern Material Components for the Web Templates
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/philwareham/textpattern-material-components-web.svg)](https://greenkeeper.io/)
-[![Build Status](https://img.shields.io/travis/philwareham/textpattern-material-components-web/master.svg)](https://travis-ci.org/philwareham/textpattern-material-components-web)
+[![Greenkeeper](https://badges.greenkeeper.io/philwareham/textpattern-material-components-web.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/philwareham/textpattern-material-components-web/master.svg)](https://travis-ci.org/philwareham/textpattern-material-components-web)
 
 [Demo](http://material-components-web.philwareham.co.uk/).
 
