@@ -19,7 +19,7 @@
     "file-loader": "3.0.1",
     "node-sass": "4.9.4",
     "sass-loader": "7.0.3",
-    "webpack": "4.28.4",
+    "webpack": "4.32.1",
     "webpack-cli": "3.3.1",
     "webpack-dev-server": "3.3.1"
   },
